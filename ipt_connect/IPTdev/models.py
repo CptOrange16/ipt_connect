@@ -446,8 +446,10 @@ class Team(models.Model):
 
 class Room(models.Model):
 	name = models.CharField(max_length=50)
+	link = models.CharField(max_length=2083,blank=True, default='')
 	def __unicode__(self):
 		return self.name
+		return self.link
 
 	def ident(self):
 		rooms = Room.objects.all()
