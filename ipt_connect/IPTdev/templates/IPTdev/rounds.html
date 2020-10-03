@@ -32,12 +32,12 @@
                 {% for thisroom in orderedroundsperroom %}
                 <tr>
                     <td>
-                        {% if thisroom.0.0.getlink != ''%}
+                        {% if thisroom.0.0.get_link != ''%}
                             <b>
-                               <a href="https://{{ thisroom.0.0.getlink }}">{{thisroom.0.0.getname}}</a>
+                               <a href="https://{{ thisroom.0.0.get_link }}">{{thisroom.0.0.name}}</a>
                             </b>
                         {% else %}
-                            <b>{{thisroom.0.0.getname}}</b>
+                            <b>{{thisroom.0.0.name}}</b>
                         {% endif %}
                     </td>
                     {% for thispf in thisroom %}

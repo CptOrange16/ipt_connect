@@ -452,8 +452,9 @@ class Room(models.Model):
 	  return self.name
 		
 	@property
-	def get_link():
+	def get_link(self):
 		return self.link
+
 
 	def ident(self):
 		rooms = Room.objects.all()
