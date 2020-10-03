@@ -31,7 +31,15 @@
 
                 {% for thisroom in orderedroundsperroom %}
                 <tr>
-                    <td ><b>{{thisroom.0.0.room}}</b></td>
+                    <td>
+                        {% if thisroom.0.0.getlink != ''%}
+                            <b>
+                               <a href="https://{{ thisroom.0.0.getlink }}">{{thisroom.0.0.getname}}</a>
+                            </b>
+                        {% else %}
+                            <b>{{thisroom.0.0.getname}}</b>
+                        {% endif %}
+                    </td>
                     {% for thispf in thisroom %}
                     <td>
                         {% include 'includes/list_rounds.html' with roundlist=thispf %}
