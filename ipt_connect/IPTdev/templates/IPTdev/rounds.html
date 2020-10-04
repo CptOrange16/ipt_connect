@@ -32,15 +32,15 @@
                 {% for thisroom in orderedroundsperroom %}
                 <tr>
                     <td>
-                        {% if thisroom.0.0.get_link != ''%}
+                        {% if thisroom.link != ''%}
                             <b>
-                               <a href="https://{{ thisroom.0.0.get_link }}">{{thisroom.0.0.name}}</a>
+                               <a href="https://{{ thisroom.link }}">{{thisroom.name}}</a>
                             </b>
                         {% else %}
-                            <b>{{thisroom.0.0.name}}</b>
+                            <b>{{thisroom.name}}</b>
                         {% endif %}
                     </td>
-                    {% for thispf in thisroom %}
+                    {% for thispf in thisroom.rounds %}
                     <td>
                         {% include 'includes/list_rounds.html' with roundlist=thispf %}
                     </td>
